@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Sidebar } from "./components/Sidebar";
 
-function App() {
+
+const App = () => {
+  const [sidebarVisible, setSidebarVisible] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="bg-pink-100 max-h-full">
+      <header className="flex">
+
+        <h1 className="text-3xl underline border-4">Candy-Castle</h1>
       </header>
+      <main className="md:flex">
+      </main>
+        <Sidebar 
+          visible={sidebarVisible}
+          setVisible={setSidebarVisible}/>
     </div>
   );
 }
-
 export default App;
